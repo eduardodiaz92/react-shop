@@ -11,6 +11,8 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
   },
+  //esta configuracion se ejecutara en modo desarollo
+  mode: "development",
   //extensiones que vamos a utilizar
   resolve: {
     extensions: [".js", ".jsx"],
