@@ -2,6 +2,7 @@
 const path = require("path");
 //simplifica la creación de archivos HTML para servir a sus paquetes webpack
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 //module.exports => objeto donde agregamos la configuracion del proyecto
 module.exports = {
   //entry => hubicacion del punto de entrada
@@ -35,6 +36,10 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.s[ac]ss$/i,
+        use: ["style-loader", "css-loader", "sass-loader"],
+      },
     ],
   },
   plugins: [
@@ -42,5 +47,16 @@ module.exports = {
       template: "./public/index.html",
       filename: "./index.html",
     }),
+    new MiniCssExtractPlugin({
+      filename: "[name].scss",
+    }),
   ],
+  //configuracion de desarrollo local para que funcione el servidor
+  devServer: {
+    static: {
+      directory: path.join(__dirname, "public"),
+    },
+    compress: true,
+    port: 3005,
+  },
 };
