@@ -11,6 +11,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
+    publicPath: "/",
   },
   //esta configuracion se ejecutara en modo desarollo
   mode: "development",
@@ -53,10 +54,11 @@ module.exports = {
   ],
   //configuracion de desarrollo local para que funcione el servidor
   devServer: {
-    static: {
-      directory: path.join(__dirname, "public"),
-    },
-    compress: true,
-    port: 3005,
+    historyApiFallback: true,
+    // static: {
+    //   directory: path.join(__dirname, "public"),
+    // },
+    // compress: true,
+    // port: 3005,
   },
 };
