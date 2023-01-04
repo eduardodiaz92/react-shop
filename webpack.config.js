@@ -25,6 +25,7 @@ module.exports = {
       "@icons": path.resolve(__dirname, "src/assets/icons/"),
       "@logos": path.resolve(__dirname, "src/assets/logos/"),
       "@pages": path.resolve(__dirname, "src/pages/"),
+      "@hooks": path.resolve(__dirname, "src/hooks/"),
     },
   },
   //reglas a crear con nuestros loaders y plugins
