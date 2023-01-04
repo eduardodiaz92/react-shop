@@ -1,1 +1,8 @@
 node_modules
+
+# Scalable Vector Graphics
+*.svg
+
+# Portable Network Graphics
+*.png
+
